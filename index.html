@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="dark" lang="it">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Nicolò Sgarra | Software Engineer & Architect</title>
+    <meta name="description" content="Nicolò Sgarra - Software Engineer & Architect specializzato nella progettazione di ecosistemi digitali complessi e architetture scalabili." />
+    
+    <!-- Open Graph / SEO -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Nicolò Sgarra | Software Engineer & Architect" />
+    <meta property="og:description" content="Progettazione e sviluppo di ecosistemi digitali complessi. Architetture software solide e scalabili." />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg?v=1">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/config.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Background Scanline Effect -->
+    <div class="fixed inset-0 pointer-events-none z-[100] scanline opacity-20"></div>
+
+    <!-- Header Navigation -->
+    <header class="fixed w-full top-0 z-50 border-b border-outline header-blur">
+        <div class="flex justify-between items-center max-w-5xl mx-auto px-margin-page h-16">
+            <div class="flex items-center gap-3">
+                <img alt="Nicolò Sgarra Logo" class="h-8 w-8 object-contain" src="assets/logo.svg?v=1" />
+                <span class="font-mono text-sm font-bold tracking-tighter primary-accent">ARCHITECT.SYS</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <nav class="hidden md:flex items-center gap-6 text-xs font-mono uppercase tracking-widest text-on-surface-variant">
+                    <a href="#about" class="hover:text-primary transition-colors">System</a>
+                    <a href="#stack" class="hover:text-primary transition-colors">Stack</a>
+                    <a href="#contact" class="hover:text-primary transition-colors">Connect</a>
+                </nav>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined primary-accent text-sm">terminal</span>
+                    <span class="font-mono text-[10px] font-bold tracking-[0.2em] primary-accent">ONLINE</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-24 min-h-screen flex flex-col items-center">
+        <div class="w-full max-w-4xl px-margin-page space-y-20">
+            
+            <!-- Hero Section -->
+            <section id="about" class="space-y-8">
+                <div class="inline-flex items-center px-4 py-1.5 rounded-sm bg-surface terminal-border">
+                    <span class="font-mono text-[10px] text-primary uppercase tracking-[0.2em] flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                        Status: Available for projects
+                    </span>
+                </div>
+                
+                <div class="space-y-2">
+                    <h1 class="text-6xl md:text-7xl font-bold tracking-tighter text-on-surface leading-none">
+                        Nicolò Sgarra
+                    </h1>
+                    <p class="text-xl md:text-2xl font-mono primary-accent">
+                        &gt; Software Engineer & Architect
+                    </p>
+                </div>
+                
+                <div class="max-w-2xl border-l border-outline pl-8 py-4">
+                    <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed italic">
+                        "Mi occupo di progettazione e sviluppo di ecosistemi digitali complessi. 
+                        Trasformo requisiti di business in architetture software solide e scalabili."
+                    </p>
+                </div>
+            </section>
+
+            <!-- Tech Stack Section -->
+            <section id="stack" class="space-y-8">
+                <div class="flex items-center gap-4">
+                    <h2 class="font-mono text-xs uppercase tracking-[0.3em] text-on-surface-variant">Tech_Infrastructure</h2>
+                    <div class="h-px flex-1 bg-outline"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- E-commerce & ERP -->
+                    <div class="p-8 bg-surface terminal-border terminal-glow transition-all duration-500 group">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="material-symbols-outlined primary-accent group-hover:scale-110 transition-transform">shopping_cart</span>
+                            <h3 class="font-mono text-sm font-bold uppercase tracking-wider">E-commerce & ERP</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="font-mono text-xs px-3 py-1.5 bg-background terminal-border border-l-2 border-l-primary text-on-surface-variant">Magento 2</span>
+                            <span class="font-mono text-xs px-3 py-1.5 bg-background terminal-border border-l-2 border-l-primary text-on-surface-variant">Odoo</span>
+                        </div>
+                    </div>
+
+                    <!-- Frameworks -->
+                    <div class="p-8 bg-surface terminal-border terminal-glow transition-all duration-500 group">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="material-symbols-outlined primary-accent group-hover:scale-110 transition-transform">layers</span>
+                            <h3 class="font-mono text-sm font-bold uppercase tracking-wider">Frameworks</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="font-mono text-xs px-3 py-1.5 bg-background terminal-border border-l-2 border-l-primary text-on-surface-variant">Laravel</span>
+                            <span class="font-mono text-xs px-3 py-1.5 bg-background terminal-border border-l-2 border-l-primary text-on-surface-variant">PHP 8.x</span>
+                            <span class="font-mono text-xs px-3 py-1.5 bg-background terminal-border border-l-2 border-l-primary text-on-surface-variant">Flutter</span>
+                        </div>
+                    </div>
+
+                    <!-- Infrastructure -->
+                    <div class="md:col-span-2 p-8 bg-surface terminal-border terminal-glow transition-all duration-500 group">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="material-symbols-outlined primary-accent group-hover:scale-110 transition-transform">cloud</span>
+                            <h3 class="font-mono text-sm font-bold uppercase tracking-wider">Infrastructure & Ops</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="font-mono text-xs px-3 py-1.5 bg-background terminal-border border-l-2 border-l-primary text-on-surface-variant">AWS / Cloud Solutions</span>
+                            <span class="font-mono text-xs px-3 py-1.5 bg-background terminal-border border-l-2 border-l-primary text-on-surface-variant">Docker</span>
+                            <span class="font-mono text-xs px-3 py-1.5 bg-background terminal-border border-l-2 border-l-primary text-on-surface-variant">Kubernetes</span>
+                            <span class="font-mono text-xs px-3 py-1.5 bg-background terminal-border border-l-2 border-l-primary text-on-surface-variant">CI/CD Pipelines</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action / Terminal -->
+            <section id="contact" class="p-8 bg-surface terminal-border">
+                <div class="space-y-4">
+                    <p class="font-mono text-xs text-on-surface-variant uppercase tracking-widest">Execute: init_contact.sh</p>
+                    <div class="space-y-2">
+                        <p class="font-mono text-sm">System is ready for new architecture challenges.</p>
+                        <div class="flex flex-wrap gap-6 pt-4">
+                            <a href="mailto:hello@nicolosgarra.com" class="group flex items-center gap-2 font-mono text-sm hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">alternate_email</span>
+                                Email_Me
+                            </a>
+                            <a href="https://github.com/nicolosgarra-dev" target="_blank" class="group flex items-center gap-2 font-mono text-sm hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">terminal</span>
+                                GitHub_Repo
+                            </a>
+                            <a href="https://linkedin.com/in/nsgarra" target="_blank" class="group flex items-center gap-2 font-mono text-sm hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">link</span>
+                                LinkedIn_Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-outline bg-background py-8">
+        <div class="max-w-5xl mx-auto px-margin-page flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-4">
+                <span class="font-mono text-[10px] text-outline-variant uppercase tracking-widest">© 2024 Nicolò Sgarra</span>
+                <span class="w-1 h-1 rounded-full bg-outline"></span>
+                <span class="font-mono text-[10px] text-outline-variant">LOC: IT_MIL_00</span>
+            </div>
+            <div class="flex items-center gap-4 text-[10px] font-mono text-outline-variant">
+                <span>V.1.0.5-STABLE</span>
+                <span class="primary-accent animate-pulse">●</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

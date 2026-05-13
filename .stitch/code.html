@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-tertiary": "#303030",
+                "on-surface": "#e5e2e1",
+                "inverse-surface": "#e5e2e1",
+                "surface-container-lowest": "#0e0e0e",
+                "on-secondary": "#313030",
+                "on-secondary-fixed-variant": "#474746",
+                "primary-fixed-dim": "#98cbff",
+                "primary": "#98cbff",
+                "on-primary-container": "#00375a",
+                "tertiary": "#c8c6c6",
+                "error": "#ffb4ab",
+                "on-tertiary-container": "#343434",
+                "secondary": "#c8c6c5",
+                "surface": "#131313",
+                "on-primary-fixed-variant": "#004a77",
+                "tertiary-container": "#9e9c9c",
+                "tertiary-fixed-dim": "#c8c6c6",
+                "primary-fixed": "#cfe5ff",
+                "outline-variant": "#3f4852",
+                "on-tertiary-fixed-variant": "#474747",
+                "error-container": "#93000a",
+                "surface-container": "#201f1f",
+                "surface-container-low": "#1c1b1b",
+                "on-error": "#690005",
+                "secondary-fixed-dim": "#c8c6c5",
+                "on-background": "#e5e2e1",
+                "on-secondary-container": "#b7b5b4",
+                "tertiary-fixed": "#e4e2e1",
+                "on-error-container": "#ffdad6",
+                "background": "#131313",
+                "surface-variant": "#353534",
+                "surface-tint": "#98cbff",
+                "surface-container-high": "#2a2a2a",
+                "inverse-on-surface": "#313030",
+                "secondary-fixed": "#e5e2e1",
+                "on-tertiary-fixed": "#1b1c1c",
+                "primary-container": "#00a3ff",
+                "on-primary": "#003354",
+                "outline": "#88919d",
+                "on-surface-variant": "#bec7d4",
+                "surface-container-highest": "#353534",
+                "surface-dim": "#131313",
+                "on-primary-fixed": "#001d33",
+                "inverse-primary": "#00629d",
+                "secondary-container": "#474746",
+                "on-secondary-fixed": "#1c1b1b",
+                "surface-bright": "#3a3939"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-page": "2rem",
+                "section-gap": "8rem",
+                "container-max": "800px",
+                "element-gap": "1.5rem",
+                "inline-gap": "0.75rem"
+            },
+            "fontFamily": {
+                "headline-sm": ["Geist"],
+                "body-md": ["Geist"],
+                "headline-md": ["Geist"],
+                "display-lg": ["Geist"],
+                "body-lg": ["Geist"],
+                "code-md": ["JetBrains Mono"],
+                "label-caps": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "code-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            overflow: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .terminal-glow:hover {
+            border-color: #00a3ff;
+            box-shadow: 0 0 0 1px #00a3ff;
+        }
+        @media (max-height: 700px) {
+            body { overflow-y: auto; }
+            .h-screen-constrained { height: auto; min-height: 100vh; padding: 2rem 0; }
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md bg-background">
+<!-- Top Navigation Anchor -->
+<header class="fixed w-full top-0 z-50 border-b border-outline-variant bg-background/80 backdrop-blur-md">
+<div class="flex justify-between items-center max-w-[800px] mx-auto px-margin-page h-16">
+<div class="flex items-center gap-inline-gap">
+<img alt="Nicolò Sgarra Logo" class="h-8 w-8 object-contain" src="data:image/png;base64,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"/>
+<span class="font-code-md text-code-md font-bold tracking-tighter text-primary-container">ARCHITECT.SYS</span>
+</div>
+<div class="flex items-center gap-inline-gap">
+<span class="material-symbols-outlined text-primary-container" data-icon="terminal">terminal</span>
+<span class="font-label-caps text-label-caps text-primary-container">ONLINE</span>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="h-screen flex flex-col justify-center items-center px-margin-page h-screen-constrained">
+<div class="w-full max-w-[800px] flex flex-col gap-element-gap">
+<!-- Hero Identity -->
+<section class="space-y-4">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant">
+<span class="font-code-md text-[10px] text-primary-container uppercase tracking-widest flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+                    Available for architecture
+                </span>
+</div>
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tighter">
+                    Nicolò Sgarra
+                </h1>
+<p class="font-headline-sm text-headline-sm text-primary-container mt-1">
+                    Software Engineer &amp; Architect
+                </p>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[600px] border-l-2 border-outline-variant pl-6 py-2">
+                Mi occupo di progettazione e sviluppo di ecosistemi digitali complessi. 
+                Trasformo requisiti di business in architetture software solide e scalabili.
+            </p>
+</section>
+<!-- Tech Stack Bento Grid / Developer Style -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+<!-- E-commerce & ERP -->
+<div class="p-6 rounded-lg border border-outline-variant bg-surface-container-low terminal-glow transition-all duration-300">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary-container" data-icon="shopping_cart">shopping_cart</span>
+<h3 class="font-code-md text-code-md text-on-surface font-bold uppercase tracking-wider">E-commerce &amp; ERP</h3>
+</div>
+<div class="flex flex-wrap gap-inline-gap">
+<span class="font-code-md text-code-md px-3 py-1 bg-surface-container-highest text-on-surface-variant border-l-2 border-primary-container">Magento</span>
+<span class="font-code-md text-code-md px-3 py-1 bg-surface-container-highest text-on-surface-variant border-l-2 border-primary-container">Odoo</span>
+</div>
+</div>
+<!-- Custom Frameworks -->
+<div class="p-6 rounded-lg border border-outline-variant bg-surface-container-low terminal-glow transition-all duration-300">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary-container" data-icon="layers">layers</span>
+<h3 class="font-code-md text-code-md text-on-surface font-bold uppercase tracking-wider">Custom Frameworks</h3>
+</div>
+<div class="flex flex-wrap gap-inline-gap">
+<span class="font-code-md text-code-md px-3 py-1 bg-surface-container-highest text-on-surface-variant border-l-2 border-primary-container">Laravel</span>
+<span class="font-code-md text-code-md px-3 py-1 bg-surface-container-highest text-on-surface-variant border-l-2 border-primary-container">PHP 8.x</span>
+</div>
+</div>
+<!-- Infrastructure -->
+<div class="md:col-span-2 p-6 rounded-lg border border-outline-variant bg-surface-container-low terminal-glow transition-all duration-300">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary-container" data-icon="cloud">cloud</span>
+<h3 class="font-code-md text-code-md text-on-surface font-bold uppercase tracking-wider">Infrastructure</h3>
+</div>
+<div class="flex flex-wrap gap-inline-gap">
+<span class="font-code-md text-code-md px-3 py-1 bg-surface-container-highest text-on-surface-variant border-l-2 border-primary-container">Cloud Solutions</span>
+<span class="font-code-md text-code-md px-3 py-1 bg-surface-container-highest text-on-surface-variant border-l-2 border-primary-container">Containerization</span>
+<span class="font-code-md text-code-md px-3 py-1 bg-surface-container-highest text-on-surface-variant border-l-2 border-primary-container">Docker</span>
+<span class="font-code-md text-code-md px-3 py-1 bg-surface-container-highest text-on-surface-variant border-l-2 border-primary-container">Kubernetes</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer Terminal -->
+<footer class="fixed w-full bottom-0 z-50 border-t border-outline-variant bg-background">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-[800px] mx-auto px-margin-page py-4">
+<div class="flex items-center gap-4 order-2 md:order-1">
+<span class="font-label-caps text-label-caps text-outline">© 2024 SYSTEM_ARCHITECT</span>
+<span class="hidden md:block w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-code-md text-[10px] text-outline">LOC: IT_MIL_00</span>
+</div>
+<div class="flex items-center gap-6 mb-4 md:mb-0 order-1 md:order-2">
+<a class="group flex items-center gap-2 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary-container text-xl" data-icon="alternate_email">alternate_email</span>
+</a>
+<a class="group flex items-center gap-2 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary-container text-xl" data-icon="terminal">terminal</span>
+<span class="font-code-md text-code-md text-outline group-hover:text-primary-container hidden md:inline">GitHub</span>
+</a>
+<a class="group flex items-center gap-2 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary-container text-xl" data-icon="link">link</span>
+<span class="font-code-md text-code-md text-outline group-hover:text-primary-container hidden md:inline">LinkedIn</span>
+</a>
+</div>
+</div>
+</footer>
+</body></html>

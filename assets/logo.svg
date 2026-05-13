@@ -1,0 +1,12 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" rx="50" fill="#131313"/>
+  <!-- Terminal Prompt Symbol [ > ] -->
+  <path d="M25 30L45 50L25 70" stroke="#00a3ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Stylized N and S formed by terminal-like segments -->
+  <!-- The N -->
+  <path d="M55 70V30L75 70V30" stroke="#00a3ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- The S cursor/underscore -->
+  <path d="M55 80H75" stroke="#00a3ff" stroke-width="6" stroke-linecap="round">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />
+  </path>
+</svg>
