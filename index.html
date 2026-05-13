@@ -21,6 +21,8 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="js/config.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/contact.js" defer></script>
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/style.css">
@@ -136,19 +138,55 @@
                     <p class="font-mono text-xs text-on-surface-variant uppercase tracking-widest">Execute: init_contact.sh</p>
                     <div class="space-y-2">
                         <p class="font-mono text-sm">System is ready for new architecture challenges.</p>
-                        <div class="flex flex-wrap gap-6 pt-4">
-                            <a href="mailto:hello@nicolosgarra.com" class="group flex items-center gap-2 font-mono text-sm hover:text-primary transition-colors">
-                                <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">alternate_email</span>
-                                Email_Me
-                            </a>
-                            <a href="https://github.com/nicolosgarra-dev" target="_blank" class="group flex items-center gap-2 font-mono text-sm hover:text-primary transition-colors">
-                                <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">terminal</span>
-                                GitHub_Repo
-                            </a>
-                            <a href="https://linkedin.com/in/nsgarra" target="_blank" class="group flex items-center gap-2 font-mono text-sm hover:text-primary transition-colors">
-                                <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">link</span>
-                                LinkedIn_Profile
-                            </a>
+                        <div id="contact-interface" class="space-y-6 pt-4">
+                            <div class="flex flex-wrap gap-6">
+                                <button id="toggle-contact-form" class="group flex items-center gap-2 font-mono text-sm hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">alternate_email</span>
+                                    Send_Message.sh
+                                </button>
+                                <a href="https://github.com/nicolosgarra-dev" target="_blank" class="group flex items-center gap-2 font-mono text-sm hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">terminal</span>
+                                    GitHub_Repo
+                                </a>
+                                <a href="https://www.linkedin.com/in/nicolosgarra/" target="_blank" class="group flex items-center gap-2 font-mono text-sm hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined text-outline-variant group-hover:text-primary">link</span>
+                                    LinkedIn_Profile
+                                </a>
+                            </div>
+
+                            <!-- Terminal Styled Form -->
+                            <div id="contact-form-container" class="hidden space-y-4 border-t border-outline pt-6">
+                                <form id="contact-form" action="https://formspree.io/f/mwvyzzgj" method="POST" class="space-y-4">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="space-y-1">
+                                            <label for="name" class="block font-mono text-[10px] uppercase text-on-surface-variant">guest_name</label>
+                                            <input type="text" name="name" id="name" required
+                                                class="w-full bg-background terminal-border px-4 py-2 font-mono text-sm focus:outline-none focus:border-primary transition-colors placeholder:text-outline-variant"
+                                                placeholder="Enter identifier...">
+                                        </div>
+                                        <div class="space-y-1">
+                                            <label for="email" class="block font-mono text-[10px] uppercase text-on-surface-variant">guest_endpoint</label>
+                                            <input type="email" name="email" id="email" required
+                                                class="w-full bg-background terminal-border px-4 py-2 font-mono text-sm focus:outline-none focus:border-primary transition-colors placeholder:text-outline-variant"
+                                                placeholder="email@example.com">
+                                        </div>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <label for="message" class="block font-mono text-[10px] uppercase text-on-surface-variant">transmission_data</label>
+                                        <textarea name="message" id="message" rows="4" required
+                                            class="w-full bg-background terminal-border px-4 py-2 font-mono text-sm focus:outline-none focus:border-primary transition-colors placeholder:text-outline-variant"
+                                            placeholder="Type your message here..."></textarea>
+                                    </div>
+                                    <div class="flex items-center justify-between gap-4">
+                                        <div id="form-status" class="font-mono text-[10px] uppercase text-on-surface-variant hidden">
+                                            <span class="primary-accent animate-pulse">>>></span> <span id="status-text">Processing...</span>
+                                        </div>
+                                        <button type="submit" class="ml-auto px-6 py-2 bg-surface terminal-border font-mono text-xs uppercase tracking-widest hover:bg-primary hover:text-background transition-all">
+                                            Execute_Send
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -161,7 +199,7 @@
     <footer class="w-full border-t border-outline bg-background py-8">
         <div class="max-w-5xl mx-auto px-margin-page flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-4">
-                <span class="font-mono text-[10px] text-outline-variant uppercase tracking-widest">© 2024 Nicolò Sgarra</span>
+                <span class="font-mono text-[10px] text-outline-variant uppercase tracking-widest">© <span id="current-year">2024</span> Nicolò Sgarra</span>
                 <span class="w-1 h-1 rounded-full bg-outline"></span>
                 <span class="font-mono text-[10px] text-outline-variant">LOC: IT_MIL_00</span>
             </div>
